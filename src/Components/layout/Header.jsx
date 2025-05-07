@@ -64,9 +64,10 @@ function Header() {
         <Toolbar  >
  
           <Typography
-            variant="h6"
+            variant="h5"
             noWrap
             component="div"
+            fontWeight={800}
             sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
           >
             HOSLOG
