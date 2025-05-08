@@ -9,7 +9,7 @@ import theme from './mui/theme.jsx'
 
 
 const client = new ApolloClient({
-  uri:import.meta.env.REACT_APP_GRAPH_CMS_URI,
+  uri:import.meta.env.VITE_GRAPH_CMS_URI,
   cache: new InMemoryCache(),
 });
 
