@@ -20,9 +20,9 @@ function CardEL({author,coverPhoto ,title ,slug}) {
       <CardContent><Typography component="h3" variant="h9" color='textPrimary' fontWeight={600}>{title}</Typography></CardContent>
       <Divider variant='middle' sx={{margin:'10px'}} />
       <CardActions>
-        {/* <Link to={`/blogs/${slug}`} style={{textDecoration:"none", width:"100%"}} > */}
+        <Link to={`/blogs/${slug}`} style={{textDecoration:"none", width:"100%"}} >
         <Button variant='outlined' color='secondary'  size='small' sx={{width:"100%", borderRadius:4, color:'blue'}}>Read more</Button>
-        {/* </Link> */}
+        </Link>
       </CardActions>
 
     </Card>
