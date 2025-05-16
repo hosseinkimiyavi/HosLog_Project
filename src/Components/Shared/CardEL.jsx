@@ -8,14 +8,14 @@ function CardEL({author,coverPhoto ,title ,slug}) {
   return (
     <>
     <Card sx={{boxShadow:"rgba(0,0,0,0.4) 0px 4px 12px", borderRadius:4}} >
-        <CardHeader
+       {author && ( <CardHeader
           avatar={
             <Avatar src= {author.avatar.url} aria-label="">
               
             </Avatar>
           }
           title={<Typography component="p" variant='p' color='textSecondary' >{author.name}</Typography>}
-        />
+        />)}
         <CardMedia component="img" height="194" image={coverPhoto.url} alt={slug} />
       <CardContent><Typography component="h3" variant="h9" color='textPrimary' fontWeight={600}>{title}</Typography></CardContent>
       <Divider variant='middle' sx={{margin:'10px'}} />
