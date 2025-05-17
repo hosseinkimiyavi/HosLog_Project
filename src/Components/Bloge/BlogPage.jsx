@@ -1,11 +1,12 @@
 import { useQuery } from "@apollo/client";
-import React from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { GET_POST_INFO } from "../../graphql/queries";
 import Loader from "../Shared/Loader";
 import { Avatar, Box, Container, Grid, Typography } from "@mui/material";
 import ArrowBackRoundedIcon from "@mui/icons-material/ArrowBackRounded";
 import sanitizeHtml from "sanitize-html"
+import CommentForm from "../Comment/CommentForm";
+
 
 export default function BlogPage() {
   const Navigate = useNavigate(); //برای برگشتن به مرحله قبل
@@ -49,8 +50,8 @@ export default function BlogPage() {
             <img
               src={coverPhoto.url}
               alt={title}
-              width="100%"
-              style={{ borderRadius: 15 }}
+              width="80%"
+              style={{ borderRadius: 15,margin:'auto' }}
             />
           </Grid>
           <Grid size={{ xs: 12 }} mt={2} display="flex" alignItems="center">
@@ -80,6 +81,9 @@ export default function BlogPage() {
               }}
             ></div>
           </Grid>
+         <Grid size={{xs:12}}>
+          <CommentForm slug={slug} />
+         </Grid>
         </Grid>
       </Container>
     </>

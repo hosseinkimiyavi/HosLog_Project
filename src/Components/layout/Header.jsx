@@ -8,6 +8,7 @@ import Typography from '@mui/material/Typography';
 import InputBase from '@mui/material/InputBase';
 
 import SearchIcon from '@mui/icons-material/Search';
+import { Link } from 'react-router-dom';
 
 
 
@@ -62,7 +63,7 @@ function Header() {
       <AppBar position="sticky" color='primary' >
         <Container maxWidth="lg"  >
         <Toolbar  >
- 
+          <Link to={'/'}>
           <Typography
             variant="h5"
             noWrap
@@ -72,6 +73,7 @@ function Header() {
           >
             HOSLOG
           </Typography>
+          </Link>
           <Search >
             <SearchIconWrapper   >
               <SearchIcon />
