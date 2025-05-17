@@ -5,6 +5,7 @@ import { GET_AUTHOR_INFO } from "../../graphql/queries";
 import { Avatar, Container, Grid, Typography } from "@mui/material";
 import sanitizeHtml from "sanitize-html";
 import CardEL from "../Shared/CardEL";
+import Loader from "../Shared/Loader";
 
 function AuthorPage() {
   const params = useParams();
@@ -13,7 +14,7 @@ function AuthorPage() {
     variables: { slug },
   });
   console.log(data);
-  if (loading) return <h2>Loading...</h2>;
+  if (loading) return <Loader />;
   if (error) return <h2>error...</h2>;
   const {
     author: { avatar, description, field, name,posts },

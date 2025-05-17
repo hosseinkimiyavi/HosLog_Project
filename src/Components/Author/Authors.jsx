@@ -3,10 +3,11 @@ import React from "react";
 import { GET_AUTHORS_INFO } from "../../graphql/queries";
 import { Avatar, Divider, Grid, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
+import Loader from "../Shared/Loader";
 
 function Authors() {
   const { loading, error, data } = useQuery(GET_AUTHORS_INFO);
-  if (loading) return <h1>loading...</h1>;
+  if (loading) return <Loader />;
   if (error) return <h1>error...</h1>;
 
   const { authors } = data;
