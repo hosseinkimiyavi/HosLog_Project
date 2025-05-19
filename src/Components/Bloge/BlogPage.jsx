@@ -6,6 +6,7 @@ import { Avatar, Box, Container, Grid, Typography } from "@mui/material";
 import ArrowBackRoundedIcon from "@mui/icons-material/ArrowBackRounded";
 import sanitizeHtml from "sanitize-html"
 import CommentForm from "../Comment/CommentForm";
+import Comments from "../Comment/Comments";
 
 
 export default function BlogPage() {
@@ -83,6 +84,9 @@ export default function BlogPage() {
           </Grid>
          <Grid size={{xs:12}}>
           <CommentForm slug={slug} />
+         </Grid>
+         <Grid size={{xs:12}} >
+          <Comments slug={slug} />
          </Grid>
         </Grid>
       </Container>
