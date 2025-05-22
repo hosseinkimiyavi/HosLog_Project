@@ -17,7 +17,7 @@ export default function BlogPage() {
   });
   if (loading) return <Loader />;
   if (error) return <h2>error...</h2>;
-  console.log(data);
+  
   const {
     post: {
       author: { avatar, name, field },

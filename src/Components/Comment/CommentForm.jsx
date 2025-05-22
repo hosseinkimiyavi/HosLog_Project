@@ -17,7 +17,7 @@ function CommentForm({slug}) {
     else {
       toast.warn("compeleted all fields")
     }
-    console.log(data);
+    
   }
   if(data) {
     toast.success("Comment submitted and awaiting approval.")

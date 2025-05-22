@@ -7,8 +7,11 @@ function Comments({ slug }) {
   const { loading, data } = useQuery(GET_POST_COMMENT, {
     variables: { slug },
   });
+  
   console.log(loading, data);
-  const { comments } = data;
+  // const { comments } = data;
+  // console.log(loading, data);
+
   return (
     <>
       <Grid
@@ -29,7 +32,8 @@ function Comments({ slug }) {
           >
             Comments
           </Typography>
-          {comments.map((comment) => (
+        {data && data.comments && data.comments.length > 0 ? (
+          data.comments.map((comment) => (
             <Grid
               size={{ xs: 12 }}
               m={2}
@@ -50,7 +54,12 @@ function Comments({ slug }) {
                 {comment.text}
               </Typography>
             </Grid>
-        ))}
+          ))
+        ) : loading ? (
+          <Typography>Loading comments...</Typography>
+        ) : (
+          <Typography>No comments found.</Typography>
+        )}
         </Grid>
       </Grid>
     </>
